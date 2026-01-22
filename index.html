@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Last Message</title>
+
+<style>
+    body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #fdecef, #f3e5f5);
+        font-family: "Segoe UI", system-ui, sans-serif;
+    }
+
+    .card {
+        background: #ffffff;
+        max-width: 760px;
+        width: 92%;
+        padding: 32px 28px;
+        border-radius: 18px;
+        box-shadow: 0 20px 55px rgba(0,0,0,0.15);
+        animation: fadeIn 1.2s ease;
+    }
+
+    h2 {
+        margin-top: 0;
+        text-align: center;
+        color: #c2185b;
+        font-weight: 600;
+        letter-spacing: 0.4px;
+    }
+
+    .message {
+        font-size: 16.5px;
+        line-height: 1.9;
+        color: #333;
+        white-space: pre-line;
+        min-height: 320px;
+    }
+
+    .footer {
+        margin-top: 25px;
+        text-align: right;
+        color: #555;
+        font-style: italic;
+    }
+
+    .hint {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #b0004f;
+        letter-spacing: 0.5px;
+        animation: pulse 2.2s infinite;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(25px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes pulse {
+        0% {
+            opacity: 0.5;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        100% {
+            opacity: 0.5;
+            transform: scale(1);
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>Ek Last Message</h2>
+
+    <div id="text" class="message"></div>
+
+    <div class="footer">
+        Take care 🌸
+    </div>
+
+    <div class="hint">
+        I just need your one reply
+    </div>
+</div>
+
+<script>
+const message = `
+Hi, Neha (aru_84738)
+
+Mujhe pata hai maine pehle bhi apni feelings batayi thi aur tumne mana kiya tha. 
+Uske baad bhi mere dil mein tumhare liye wahi respect aur wahi feelings hain.
+
+Ye message main bina kisi pressure ke, sirf sach bolne ke liye likh raha hoon. 
+Agar tumhara jawab phir se naa hi hai, to main use poori izzat ke saath accept karunga 
+aur aage se kabhi tumhe disturb nahi karunga 
+aur na hi tumhare ghar ke side se guzrunga.
+
+Bas ek chhoti si request hai — 
+chahe tumhara jawab jo bhi ho, please is baat ko apni family 
+ya kisi aur se share na karna.
+
+Ye sirf meri taraf se ek last message aur request thi, 
+jo yahin khatam ho jaaye to mujhe sukoon milega.
+
+Tumhari khushi aur comfort mere liye hamesha important rahegi.
+`;
+
+let i = 0;
+const speed = 28;
+const textDiv = document.getElementById("text");
+
+function typeEffect() {
+    if (i < message.length) {
+        textDiv.innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeEffect, speed);
+    }
+}
+
+typeEffect();
+</script>
+
+</body>
+</html>
